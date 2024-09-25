@@ -5,10 +5,6 @@ import cv2
 import numpy as np
 import re
 import json
-
-# Set the path for Tesseract
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR'  # Update this path if necessary
-
 # Preprocessing functions
 def denoise(image):
     return cv2.fastNlMeansDenoisingColored(image, None, 10, 10, 7, 21)
@@ -36,7 +32,7 @@ def extract_text(image):
 
     # OCR with Hindi and English language
     config = r'--oem 3 --psm 6 -l hin+eng'
-    text = pytesseract.image_to_string(thresh, config=config)
+    text = pytesseract.image_to_string(thresh, config=config, lang='hin+eng')
 
     return text
 
