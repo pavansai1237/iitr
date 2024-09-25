@@ -7,7 +7,7 @@ import re
 import json
 
 # Set the path for Tesseract
-pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'  # Update this path if necessary
+pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR'  # Update this path if necessary
 
 # Preprocessing functions
 def denoise(image):
