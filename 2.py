@@ -4,7 +4,7 @@ import pytesseract
 import cv2
 import numpy as np
 import re
-import json
+
 # Preprocessing functions
 def denoise(image):
     return cv2.fastNlMeansDenoisingColored(image, None, 10, 10, 7, 21)
@@ -60,15 +60,6 @@ def main():
         # Process the image and display extracted text
         extracted_text = extract_text(image)
         st.text_area("Extracted Text", extracted_text, height=200)
-
-        # Provide a JSON file download
-        json_data = json.dumps({"extracted_text": extracted_text}, ensure_ascii=False)
-        st.download_button(
-            label="Download extracted text as JSON",
-            data=json_data,
-            file_name="extracted_text.json",
-            mime="application/json"
-        )
 
         # Search functionality
         keyword = st.text_input("Enter a keyword")

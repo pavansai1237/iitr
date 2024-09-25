@@ -3,3 +3,4 @@ opencv-python-headless==4.8.0.76
 pillow==10.4.0
 pytesseract==0.3.13
 numpy==1.26.0
+tesseract-ocr
